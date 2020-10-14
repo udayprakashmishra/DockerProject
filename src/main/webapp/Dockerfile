@@ -4,7 +4,7 @@ FROM tomcat:8.0
 ENV PATH_WITH_SPACE "C:/Users/Uday Prakash Mishra/Practice_Software/Jenkins/apache-tomcat-8.5.58/webapps"
 ENV SOURCE_FILE="**/SampleWebApp.war"
 
-COPY ["C:\Users\Uday Prakash Mishra\.jenkins\workspace\Build_Docker_Image/SampleWebApp.war","C:/Users/Uday Prakash Mishra/Practice_Software/Jenkins/apache-tomcat-8.5.58/webapps"]
+COPY ["C:\Users\Uday Prakash Mishra\.jenkins\workspace\Build_Docker_Image\SampleWebApp.war","C:/Users/Uday Prakash Mishra/Practice_Software/Jenkins/apache-tomcat-8.5.58/webapps"]
 
 EXPOSE 8080
 

@@ -19,7 +19,7 @@ pipeline {
        stage('Docker'){
        steps{
        bat 'dir'
-       bat 'docker build src\main\webapp\Dockerfile -t tomcatsamplewebapp:100'
+       bat 'docker build -f src/main/webapp/Dockerfile -t tomcatsamplewebapp:100'
        }
        }
         

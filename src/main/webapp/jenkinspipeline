@@ -1,0 +1,26 @@
+pipeline {
+  agent any
+  stages {
+    
+      stage('Build Application') {
+            steps {
+            echo "Started"
+               bat 'mvn -f pom.xml clean package'
+                echo "Ended"
+            }
+            post {
+                success {
+                    echo "Now Archiving the Artifacts...."
+                    archiveArtifacts artifacts: '**/*.war'
+                }
+            }
+        }
+        
+       stage('Docker'){
+       steps{
+       bat 'docker build . -t tomcatdocker:${env.BUILD_ID} '
+       }
+       }
+        
+  }
+}
